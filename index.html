@@ -1,0 +1,226 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<meta charset="utf-8" /> 
+	<title>jQuery Mobile: Demos and Documentation</title> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css" /> 
+	<link rel="stylesheet" href="docs/_assets/css/jqm-docs.css" /> 
+	<script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="jquery.mobile-1.0a2.min.js"></script>
+	<script type="text/javascript" src="zonesplanner.js" charset="utf-8"></script>
+	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+	<script type="text/javascript" src="gtranslator.js"></script>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+</head> 
+<body> 
+<div data-role="page" data-theme="b" id="jqm-home"> 
+
+	<div data-role="header">
+		<h1>Page Title</h1>
+	</div><!-- /header -->	
+	<div data-role="content"> 
+
+		<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b" id="diggcontent"> 
+			<li data-role="list-divider">Demos</li> 
+			<li><a href="#jqm-setting">Setting</a></li> 
+		</ul> 
+		<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b" id="diggcontent"> 
+			<li data-role="list-divider">ZonePlanner</li> 
+			<li><a href="#jqm-setting">Setting</a></li> 
+		</ul>
+		<ul class="listview">
+			<li>
+				<span class="timetable" style="width:100%">Tap next row to select cities</font>
+			</li>
+			<li>
+				<select id="city1" class="timetable timetablesel" >
+					<option value=0>GMT</option>
+					<option value=1>Vancouver</option>
+					<option value=2>SanFrancisco</option>
+					<option value=3>Seattle</option>
+					<option value=4>LosAngeles</option>
+					<option value=5>Denver</option>
+					<option value=6>MexicoCity</option>
+					<option value=7>Houston</option>
+					<option value=8>Minneapolis</option>
+					<option value=9>NewOrleans</option>
+					<option value=10>Chicago</option>
+					<option value=11>HongKong</option>
+					<option value=12>Beijing</option>
+					<option value=13>Helsinki</option>
+					<option value=14>London</option>
+					<option value=15>Madrid</option>
+					<option value=16>Barcelona</option>
+				</select>
+				<select id="city2" class="timetable timetablesel" >
+					<option value=0>GMT</option>
+					<option value=1>Vancouver</option>
+					<option value=2>SanFrancisco</option>
+					<option value=3>Seattle</option>
+					<option value=4>LosAngeles</option>
+					<option value=5>Denver</option>
+					<option value=6>MexicoCity</option>
+					<option value=7>Houston</option>
+					<option value=8>Minneapolis</option>
+					<option value=9>NewOrleans</option>
+					<option value=10>Chicago</option>
+					<option value=11>HongKong</option>
+					<option value=12>Beijing</option>
+					<option value=13>Helsinki</option>
+					<option value=14>London</option>
+					<option value=15>Madrid</option>
+					<option value=16>Barcelona</option>
+				</select>
+				<select id="city3" class="timetable timetablesel" >
+					<option value=0>GMT</option>
+					<option value=1>Vancouver</option>
+					<option value=2>SanFrancisco</option>
+					<option value=3>Seattle</option>
+					<option value=4>LosAngeles</option>
+					<option value=5>Denver</option>
+					<option value=6>MexicoCity</option>
+					<option value=7>Houston</option>
+					<option value=8>Minneapolis</option>
+					<option value=9>NewOrleans</option>
+					<option value=10>Chicago</option>
+					<option value=11>HongKong</option>
+					<option value=12>Beijing</option>
+					<option value=13>Helsinki</option>
+					<option value=14>London</option>
+					<option value=15>Madrid</option>
+					<option value=16>Barcelona</option>
+				</select>
+			</li>
+			<li>
+				<span id="city11time" class="timetable">Time1</span>
+				<span id="city12time" class="timetable">Time2</span>
+				<span id="city13time" class="timetable">Time3</span>
+			</li>
+			<li>
+				<span id="city21time" class="timetable">Time1</span>
+				<span id="city22time" class="timetable">Time2</span>
+				<span id="city23time" class="timetable">Time3</span>
+			</li>
+			<li>
+				<span id="city31time" class="timetable">Time1</span>
+				<span id="city32time" class="timetable">Time2</span>
+				<span id="city33time" class="timetable">Time3</span>
+			</li>
+			<li>
+				<span id="city41time" class="timetable">Time1</span>
+				<span id="city42time" class="timetable">Time2</span>
+				<span id="city43time" class="timetable">Time3</span>
+			</li>
+			<li>
+				<span id="city51time" class="timetable">Time1</span>
+				<span id="city52time" class="timetable">Time2</span>
+				<span id="city53time" class="timetable">Time3</span>
+			</li>
+			<li>
+				<span id="city61time" class="timetable">Time1</span>
+				<span id="city62time" class="timetable">Time2</span>
+				<span id="city63time" class="timetable">Time3</span>
+			</li>
+			<li>
+				<span id="city1title" class="timetable timetabsubtitle" >City1</span>
+				<span id="city2title" class="timetable timetabsubtitle" >City2</span>
+				<span id="city3title" class="timetable timetabsubtitle" >City3</span>
+			</li>
+			<li>
+				<span id="city71time" class="timetable">Time1</span>
+				<span id="city72time" class="timetable">Time2</span>
+				<span id="city73time" class="timetable">Time3</span>
+			</li>
+			<li>
+				<span id="city81time" class="timetable">Time1</span>
+				<span id="city82time" class="timetable">Time2</span>
+				<span id="city83time" class="timetable">Time3</span>
+			</li>
+			<li>
+				<span id="city91time" class="timetable">Time1</span>
+				<span id="city92time" class="timetable">Time2</span>
+				<span id="city93time" class="timetable">Time3</span>
+			</li>
+			<li>
+				<span id="city101time" class="timetable">Time1</span>
+				<span id="city102time" class="timetable">Time2</span>
+				<span id="city103time" class="timetable">Time3</span>
+			</li
+			<li>
+				<span id="city111time" class="timetable">Time1</span>
+				<span id="city112time" class="timetable">Time2</span>
+				<span id="city113time" class="timetable">Time3</span>
+			</li>
+			<li>
+				<span id="city121time" class="timetable">Time1</span>
+				<span id="city122time" class="timetable">Time2</span>
+				<span id="city123time" class="timetable">Time3</span>
+			</li>
+			<li class="arrow">
+				<a href="#more">
+				<span class="timetable" style="width:100%">Tap for Daylight Saving Time settings</font>
+				</a>
+			</li>
+		</ul>
+		
+	</div> 
+</div> 
+<div data-role="page" data-theme="b" id="jqm-setting">
+
+	<div data-role="header">
+		<h1>Page Title</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<li class="arrow"><a href="#about">About</a></li>
+		<li class="arrow"><a href="#dstsettings" id="dstsettingspage">Daylight Saving Time settings</a></li>
+		<li class="arrow"><a href="#gtranslator">Translate a short phrase</a></li>
+		<li class="forward"><a href="http://www.twitter.com/waiseto" target="_blank"><img src="follow_me-c.png" alt="Follow waiseto on Twitter"/></a></li>
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /header -->
+</div><!-- /page -->
+<div data-role="page" data-theme="b" id="gtranslator">
+
+	<div data-role="header">
+		<h1>Page Title</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+	    <div class="toolbar">
+			<a class="button back" href="#more">Back</a>
+	        <h1>Translate</h1>
+	    </div>
+		<div style="margin:10">
+		Auto detect source language and translate to:<br/>
+		<select id="tlang" style="width:200px;">
+		  <option value="zh-TW">Chinese Trad</option>
+		  <option value="zh-CN">Chinese Simpl</option>
+		  <option value="en">English</option>
+		  <option value="fi">Finnish</option>
+	      <option value="fr">French</option>
+		  <option value="de">German</option>
+	      <option value="it">Italian</option>
+	      <option value="ja">Japanese</option>
+		  <option value="ko">Korean</option>
+		  <option value="pt">Portuguese</option>
+		  <option value="es">Spanish</option>
+		</select><BUTTON TYPE=BUTTON onClick="gtranslate()" style="margin:10;">
+		<I>GO</I></BUTTON><br/><br/>
+		<textarea id="text" name="query" rows="5" cols="30">Enter string here</textarea> 
+	    <textarea id="translation" name="results" rows="5" cols="30">Results</textarea><br/>
+		Copy from the above text box and paste the text where ever.
+		</div>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /header -->
+</div><!-- /page -->
+</html>
+​
+</body> 
+</html>

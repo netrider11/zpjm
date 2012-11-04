@@ -1,0 +1,116 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<meta charset="utf-8" /> 
+	<title>jQuery Mobile: Demos and Documentation</title> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css" /> 
+	<link rel="stylesheet" href="docs/_assets/css/jqm-docs.css" /> 
+	<script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="jquery.mobile-1.0a2.min.js"></script>
+	
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Google AJAX Search API Sample</title>
+    <script src="http://www.google.com/jsapi?key=AIzaSyA5m1Nc8ws2BbmPRwKu5gFradvD_hgq6G0" type="text/javascript"></script>
+    <script type="text/javascript">
+    /*
+    *  How to load a feed via the Feeds API.
+    */
+
+    google.load("feeds", "1");
+
+    // Our callback function, for when a feed is loaded.
+    function feedLoaded(result) {
+      if (!result.error) {
+        // Grab the container we will put the results into
+        var container = document.getElementById("diggcontent");
+        //container.innerHTML = '';
+
+        // Loop through the feeds, putting the titles onto the page.
+        // Check out the result object for a list of properties returned in each entry.
+        // http://code.google.com/apis/ajaxfeeds/documentation/reference.html#JSON
+        for (var i = 0; i < result.feed.entries.length; i++) {
+          var entry = result.feed.entries[i];
+          var div = document.createElement("li");
+          div.appendChild(document.createTextNode(entry.title));
+          container.appendChild(div);
+        }
+      }
+	  $('#diggcontent').listview('refresh');
+    }
+
+    function OnLoad() {
+      // Create a feed instance that will grab Digg's feed.
+      var feed = new google.feeds.Feed("http://www.digg.com/rss/index.xml");
+
+      // Calling load sends the request off.  It requires a callback function.
+      feed.load(feedLoaded);
+    }
+
+    google.setOnLoadCallback(OnLoad);
+    </script>
+</head> 
+<body> 
+<div data-role="page" data-theme="b" id="jqm-home"> 
+
+	<div data-role="header">
+		<h1>Page Title</h1>
+	</div><!-- /header -->	
+	<div data-role="content"> 
+		
+		<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b"> 
+			<li data-role="list-divider">Overview</li> 
+			<li><a href="docs/about/intro.html">Intro to jQuery Mobile</a></li> 
+			<li><a href="docs/about/features.html">Features</a></li> 
+			<li><a href="docs/about/accessibility.html">Accessibility</a></li> 
+			<li><a href="docs/about/platforms.html">Supported platforms</a></li> 
+		</ul> 
+		
+		<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b"> 
+			<li data-role="list-divider">API</li> 
+			<li><a href="docs/api/globalconfig.html">Configuring defaults</a></li> 
+			<li><a href="docs/api/events.html">Events</a></li> 
+			<li><a href="docs/api/methods.html">Methods &amp; Utilities</a></li> 
+			<li><a href="docs/api/mediahelpers.html">Responsive Layout</a></li> 
+			<li><a href="docs/api/themes.html">Theme framework</a></li> 
+		</ul> 
+		
+		<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b"> 
+			<li data-role="list-divider">Components</li> 
+			<li><a href="docs/pages/index.html">Pages &amp; dialogs</a></li> 
+			<li><a href="docs/toolbars/index.html">Toolbars</a></li> 
+			<li><a href="docs/buttons/index.html">Buttons</a></li> 
+			<li><a href="docs/content/index.html">Content formatting</a></li> 
+			<li><a href="docs/forms/index.html">Form elements</a></li> 
+			<li><a href="docs/lists/index.html">List views</a></li> 
+		</ul> 
+		
+		<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b"> 
+			<li data-role="list-divider">Demos</li> 
+			<li><a href="experiments/api-viewer/index.html">jQuery API browser</a></li> 
+		</ul> 
+
+		<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b" id="diggcontent"> 
+			<li data-role="list-divider">Demos</li> 
+			<li><a href="#jqm-setting">Setting</a></li> 
+		</ul> 
+
+	</div> 
+</div> 
+<div data-role="page" id="jqm-setting">
+
+	<div data-role="header">
+		<h1>Page Title</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p>Page content goes here.</p>		
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /header -->
+</div><!-- /page -->
+</html>
+​
+</body> 
+</html>
